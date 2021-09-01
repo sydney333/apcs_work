@@ -9,4 +9,4 @@ here's a list:
 
 the quick _brown_ __fox__ jumped
 
-[marlborough school] (http://google.com)
+[google](http://google.com)
