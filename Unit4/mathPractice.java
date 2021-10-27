@@ -1,5 +1,5 @@
 public class mathPractice{
-
+//sum of squares
   public static int sumOfSquares(int n)
   {
     if(n==1)
@@ -7,7 +7,7 @@ public class mathPractice{
       else
     return(n*n + sumOfSquares(n-1));
   }
-
+//count occurances
     public static int countOccurances(String full, String section)
     {
     int count = 0;
@@ -21,7 +21,7 @@ public class mathPractice{
     return count;
 
 
-
+//reverse the word
 }
   public static String reverse(String word)
   {
