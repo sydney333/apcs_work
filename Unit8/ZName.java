@@ -2,29 +2,27 @@ import java.util.*;
 public class ZName
 {
 
-  public static string testNames(ArrayList<String> Names)
+  public static int testNames(ArrayList<String> people)
   {
-
     int total = 0;
 
-    for(int i = 0; i<Names.size(); i++)
-    {
-      if(Names.substring(0,1) == "z")
-      {
-        System.out.println(Names + Names.size());
-      }else{
-        System.out.println(Names);
-      }
+      for(String p : people){
+        if(p.substring(0,1).equals("Z")){
+          total += p.length();
+          System.out.println(p);
+        }
+
     }
-    return total;
+      return total;
   }
+
 
   public static void main(String[] args)
   {
-    ArrayList<String> Names = new ArrayList<String>();
-    Names.add("Sydney");
-    Names.add("Maddy");
-    Names.add("Zorro");
-    System.out.println(testNames(Names));
+    ArrayList<String> names = new ArrayList<String>();
+    names.add("Sydney");
+    names.add("Maddy");
+    names.add("Zorro");
+    System.out.println(testNames(names));
   }
 }
