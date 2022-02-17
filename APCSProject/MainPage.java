@@ -6,13 +6,10 @@ public class MainPage extends PApplet{
 
     public void settings(){
       size(960,540);
-
-
     }
 
     public void setup(){
       textAlign(CENTER);
-      gameState = "START";
 
       gameStates  = new ArrayList<StateFunctions>();
       homePage = new HomePage(this);
@@ -20,6 +17,8 @@ public class MainPage extends PApplet{
       levelOne = new LevelOne(this);
       gameStates.add(levelOne);
       avatar = new Avatar(this);
+//      brick = new Brick(this, position);
+
     }
 
 
@@ -27,45 +26,48 @@ public class MainPage extends PApplet{
       background(0);
 
 
-      if(gameState.equals("START")){
-        homePage.run();
-        homePage.state();
-      }
+    gameStates.get(current).run();
+    gameStates.get(current).state();
+    if( current>0){
 
-      if(gameState.equals("ONE")){
-
-        levelOne.run();
-        levelOne.state();
-        avatar.draw();
-
-
-      }
-
-
-      gameStates.get(current).run();
-      gameStates.get(current).state();
-
-
+    avatar.draw();
+  //  brick.draw();
+  }
 
 
     }
     public void keyPressed(){
-      //gameStates.get(current).keyPressed();
-      if (gameState.equals("START"))
+
+      if (current==0 )
       {
           current = 1;
-        //  gameState.equals("ONE");
-      //   avatar.draw();
+      }else if(current>0){
+        if(keyCode == RIGHT){
 
+          avatar.moveRight();
+
+        }
+        if(keyCode == LEFT){
+
+          avatar.moveLeft();
+
+        }
       }
     }
+    public void keyReleased(){
+      if(current>0){
+        avatar.stopMove();
+      }
+    }
+//key releasd set velocity back to o, during key pressed, velocity is a number
 
-    private String gameState;
     private HomePage homePage;
     private LevelOne levelOne;
     private ArrayList<StateFunctions> gameStates;
     public int current = 0;
     private Avatar avatar;
+  // private Brick brick;
+
 
     public static void main(String[] args){
         PApplet.main("MainPage");

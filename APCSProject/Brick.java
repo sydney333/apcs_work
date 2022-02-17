@@ -1,28 +1,23 @@
+
 import processing.core.*;
 public class Brick{
 
   //platform class
-  public Brick(PApplet e){
+  public Brick(PApplet e, PVector position){
     this.e = e;
+    this.position = position.copy();
   }
-
-  public void settings(){
-
-
-  }
-
-  public void setup(){
-
-  }
-
 
 
   public void draw(){
     e.fill(255);
-    e.rect(10,10,25,25);
+    e.rect(position.x, position.y ,100,25);
+
   }
 
   private PApplet e;
+  private PVector position;
+
 
 
 }

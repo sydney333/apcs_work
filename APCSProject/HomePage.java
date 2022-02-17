@@ -36,11 +36,7 @@ public void run(){
 }
 
 public void keyPressed(){
-//  if (gameState.equals("START")) {
-  //  gameState = "ONE";
-    //current=1;
-    //p.print(current);
-//  }
+  
 }
 
 public String state(){

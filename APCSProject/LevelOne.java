@@ -1,34 +1,45 @@
+
 import processing.core.*;
+import java.util.*;
 public class LevelOne implements StateFunctions{
 
   public LevelOne(PApplet a){
     this.a = a;
 
-    width = 960;
-    height = 540;
+
+    bricks = new ArrayList<Brick>();
+    intializeArray();
+
 
     backgroundOne = a.loadImage("one.png");
-    backgroundOne.resize(width, height);
+    backgroundOne.resize(a.width, a.height);
   //  gameState = "ONE";
-    a.print("in levelOne ");
-  //  a.print(current);
-
-
   }
 
-  public void settings(){
-
+  public void intializeArray(){
+    for(int i=0; i<4; i++){
+      for(int j=0; j<5; j++){
+        PVector position = new PVector(a.width*j/5.0f, a.height*i/4.0f);
+        Brick b = new Brick(this.a, position);
+        bricks.add(b);
+      }
+    }
   }
+
 
   public void run(){
 
     a.image(backgroundOne, 0,0);
     a.textSize(20);
     a.text("Level 1", 40, 40);
-    
 
+    for(Brick b : bricks){
+      b.draw();
+}
 
+//    createBrick();
   }
+
 
   public void keyPressed(){
 
@@ -40,8 +51,8 @@ public class LevelOne implements StateFunctions{
 
   private PImage backgroundOne;
   private PApplet a;
-  private int height;
-  private int width;
-//  public String gameState;
-//  public int current;
+  private ArrayList<Brick> bricks;
+  private PVector position;
+  private Brick b;
+
 }
