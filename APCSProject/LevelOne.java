@@ -19,7 +19,7 @@ public class LevelOne implements StateFunctions{
   public void intializeArray(){
     for(int i=0; i<4; i++){
       for(int j=0; j<5; j++){
-        PVector position = new PVector(a.width*j/5.0f, a.height*i/4.0f);
+        PVector position = new PVector(a.width*j/10.0f, a.height*i/8.0f);
         Brick b = new Brick(this.a, position);
         bricks.add(b);
       }
