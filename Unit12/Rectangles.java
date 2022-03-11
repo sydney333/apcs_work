@@ -41,21 +41,20 @@ public class Rectangles{
   }
 
   public static double greatestArea(int[][] values){
-    double total = 0.0;
+    double current = 0.0;
     double greatest = 0.0;
 
     for(int i = 0; i<values.length; i++){
       for(int j = 0; j<values[i].length; j++){
-        total += values[0]*values[0];
-        if(greatest>total-1){
-          greatest = total;
-        }
+        current = ((values[i][j]*i + values[i][j]*j)/2);
+      }
+        if(greatest>=current){
+          current = greatest;
 
       }
     }
     return greatest;
-
-      }
+  }
 
 
 
@@ -86,7 +85,7 @@ public class Rectangles{
     area(10.0,15.0);
     double result = averagePerimeter(values);
     System.out.println("average perimeter: " + result);
-    System.out.println(greatestArea(values));
+    System.out.println("greatest area: " + greatestArea(values));
   }
 
 
