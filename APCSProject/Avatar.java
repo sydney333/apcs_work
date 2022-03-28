@@ -4,8 +4,8 @@ public class Avatar{
 
 public Avatar(PApplet l){
   this.l = l;
-  this.position = new PVector(l.width/2, l.height/2);
-  this.velocity = new PVector(0, 0);
+  PVector positionAvatar = new PVector(l.width/2, l.height/2);
+  PVector velocityAvatar = new PVector(-1,1);
   platform = l.loadImage("platform.png");
   platform.resize(200, 100);
 }
@@ -13,26 +13,26 @@ public Avatar(PApplet l){
 
 public void draw(){
   l.fill(0);
-  l.image(platform, position.x, position.y+200);
+  l.image(platform, positionAvatar.x, positionAvatar.y+200);
 
-  PVector newPos = position.copy();
-  newPos.add(velocity);
+  PVector newPos = positionAvatar.copy();
+  newPos.add(velocityAvatar);
   if(checkEdge(newPos) == true){
-    position = newPos.copy();
+    positionAvatar = newPos.copy();
   }
 
 }
 
 public void moveRight(){
-  velocity.x += .5f;
+  velocityAvatar.x += .5f;
 }
 
 public void moveLeft(){
-  velocity.x -= .5f;
+  velocityAvatar.x -= .5f;
 }
 
 public void stopMove(){
-  velocity.x = 0;
+  velocityAvatar.x = 0;
 }
 
 public boolean checkEdge(PVector newPos){
@@ -50,8 +50,8 @@ public boolean checkEdge(PVector newPos){
 
 private PImage platform;
 private PApplet l;
-private PVector position;
-private PVector velocity;
+private PVector positionAvatar;
+private PVector velocityAvatar;
 
 
 }
