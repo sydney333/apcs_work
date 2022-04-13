@@ -3,12 +3,13 @@ import java.util.*;
 public class AcademicClass{
 
 
-  public void addTeacher(String name){
+  public AcademicClass(){
+    classwhole = new ArrayList<Student>();
+  }
 
-    for(Teacher t: teacher){
-      t.getName();
-    }
-    return name;
+  public void addTeacher(String name, String subject){
+
+    classWhole.add(new Teacher(name, subject));
   }
 
   //function to add students to ArrayList
@@ -39,7 +40,7 @@ public ArrayList<Student> returnAll(){
    public ArrayList<Student> findNumFavs(int n){
      ArrayList<Student> findMatchingNums = new ArrayList<Student>();
 
-     for(Student s:students){
+     for(Student s : students){
        if(s.getFavNum()==n){
          findMatchingNums.add(s);
        }
@@ -82,7 +83,7 @@ public ArrayList<Student> returnAll(){
      System.out.println(oddStudents);
 
      System.out.println(allStudents.findNumFavs(3));
-     classWhole.addTeacher("Dr. Kessner");
+     allStudents.addTeacher("Dr. Kessner");
 
 
 
