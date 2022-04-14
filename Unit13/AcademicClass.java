@@ -3,9 +3,15 @@ import java.util.*;
 public class AcademicClass{
 
 
-  public void addTeacher(String name, String subject){
 
-    teacher.getName();
+  public AcademicClass(){
+    students = new ArrayList<Student>();
+    //teacher = new Teacher()
+  }
+
+  public void addTeacher(String name, String subject){
+    teacher = new Teacher(name, subject);
+    System.out.println(teacher.getName());
   }
 
   //function to add students to ArrayList
@@ -21,10 +27,8 @@ public class AcademicClass{
 
   //fufnction that prints infor about the class, all the students name
 public void returnAll(){
-    ArrayList<Student> students = new ArrayList<Student>();
-
      System.out.println(students);
-     System.out.println(addTeacher());
+     System.out.println(teacher);
 
    }
   //function that takes integer as input and returns arraylist of
@@ -43,7 +47,7 @@ public void returnAll(){
    //function that returns ArrayList of names of students
    //whose favorite num is odd
 
-   public ArrayList<Student> oddNums(ArrayList<Student> student){
+   public ArrayList<Student> oddNums(){
      ArrayList<Student> odds = new ArrayList<Student>();
      for(Student s : students){
        if(s.getFavNum()%2==1){
@@ -70,11 +74,12 @@ public void returnAll(){
      allStudents.addStudent("Max", 2);
      allStudents.addStudent("Dylan", 8);
 
-     ArrayList<Student> oddStudents = oddNums(allStudents);
+     ArrayList<Student> oddStudents = allStudents.oddNums();
      System.out.println(oddStudents);
 
      System.out.println(allStudents.findNumFavs(3));
      allStudents.addTeacher("Dr. Kessner", "APCS");
+     allStudents.returnAll();
 
 
 
