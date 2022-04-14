@@ -3,13 +3,9 @@ import java.util.*;
 public class AcademicClass{
 
 
-  public AcademicClass(){
-    classwhole = new ArrayList<Student>();
-  }
-
   public void addTeacher(String name, String subject){
 
-    classWhole.add(new Teacher(name, subject));
+    teacher.getName();
   }
 
   //function to add students to ArrayList
@@ -24,23 +20,19 @@ public class AcademicClass{
   }
 
   //fufnction that prints infor about the class, all the students name
-public ArrayList<Student> returnAll(){
-  ArrayList<Student> classWhole = new ArrayList<Student>();
-     classWhole = students;
-     for(Student s: students){
-       classWhole.add(s);
-       classWhole.addTeacher(teacher);
+public void returnAll(){
+    ArrayList<Student> students = new ArrayList<Student>();
 
-     }
-     return classWhole;
+     System.out.println(students);
+     System.out.println(addTeacher());
 
-     }
+   }
   //function that takes integer as input and returns arraylist of
    //students whose favorite nums are 'n'
    public ArrayList<Student> findNumFavs(int n){
      ArrayList<Student> findMatchingNums = new ArrayList<Student>();
 
-     for(Student s : students){
+     for(Student s: students){
        if(s.getFavNum()==n){
          findMatchingNums.add(s);
        }
@@ -51,10 +43,10 @@ public ArrayList<Student> returnAll(){
    //function that returns ArrayList of names of students
    //whose favorite num is odd
 
-   public ArrayList<Student> oddNums(ArrayList<Student> students){
+   public ArrayList<Student> oddNums(ArrayList<Student> student){
      ArrayList<Student> odds = new ArrayList<Student>();
-     for(Student s:students){
-       if(s.getFaveNum()%2==1){
+     for(Student s : students){
+       if(s.getFavNum()%2==1){
          odds.add(s);
        }
      }
@@ -65,7 +57,6 @@ public ArrayList<Student> returnAll(){
    private Teacher teacher;
    //private arrayList of students
    private ArrayList<Student> students;
-   private ArrayList<Student> classWhole;
 
 
 
@@ -79,11 +70,11 @@ public ArrayList<Student> returnAll(){
      allStudents.addStudent("Max", 2);
      allStudents.addStudent("Dylan", 8);
 
-     ArrayList<Student> oddStudents = allStudents.oddNums();
+     ArrayList<Student> oddStudents = oddNums(allStudents);
      System.out.println(oddStudents);
 
      System.out.println(allStudents.findNumFavs(3));
-     allStudents.addTeacher("Dr. Kessner");
+     allStudents.addTeacher("Dr. Kessner", "APCS");
 
 
 
