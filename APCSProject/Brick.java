@@ -11,9 +11,22 @@ public class Brick{
 
   public void draw(){
     e.fill(255);
-    e.rect(position.x, position.y ,100,25);
+    e.rect(position.x, position.y ,150,25);
 
   }
+
+  public PApplet getE(){
+    return e;
+  }
+
+  public PVector getPosition(){
+    return position;
+  }
+
+  public void disappear(){
+    e.fill(255,0);
+  }
+  
 
   private PApplet e;
   private PVector position;
