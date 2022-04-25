@@ -17,7 +17,7 @@ public BallClass(PApplet p, PVector positionBall, PVector velocity){
   public void drawBall(){
     p.fill(0);
     positionBall.add(velocity);
-    
+
     p.ellipse(positionBall.x,positionBall.y,ballRadi,ballRadi);
     //System.out.println("[" +positionBall.x + ", " + positionBall.y + "]");
   }
@@ -79,14 +79,21 @@ public BallClass(PApplet p, PVector positionBall, PVector velocity){
 
     public void changeXVel(){
       velocity.x*=-1;
+      velocity.x++;
       velocity.y*=1;
     }
-    public void incrementVel(){
-      velocity.y+=1;
+    /*
+    public void incrementxVel(){
+      velocity.x+=0.5;
     }
+    public void incrementyVel(){
+      velocity.y+=0.5;
+    }
+    */
 
     public void changeYVel(){
       velocity.y*=-1;
+      velocity.y++;
       velocity.x*=1;
     }
 

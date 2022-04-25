@@ -61,6 +61,7 @@ public class LevelOne implements StateFunctions{
   public boolean hitSide(float x, float y, float ballX, float ballY, BallClass ball){
     if(ballX==x && ballY>=y && ballY<=y+25){
       ball.changeXVel();
+    //  ball.incrementxVel();
       return true;
     }
     return false;
@@ -68,6 +69,7 @@ public class LevelOne implements StateFunctions{
   public boolean hitTopBot(float x, float y, float ballX, float ballY, BallClass ball){
     if(ballY== y && ballX>=x && ballX<=x+150){
       ball.changeYVel();
+    //  ball.incrementyVel();
       return true;
     }
     return false;
@@ -103,7 +105,6 @@ public class LevelOne implements StateFunctions{
           score++;
           b.disappear();
           bricks.remove(b);
-          ball.incrementVel();
           break;
         }
       }
